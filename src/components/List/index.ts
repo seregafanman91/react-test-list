@@ -1,2 +1,2 @@
 export { default } from "./List";
-export { IListValues } from "./List.interfaces";
+export * from "./List.interfaces";

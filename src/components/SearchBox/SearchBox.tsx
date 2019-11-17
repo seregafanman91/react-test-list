@@ -14,7 +14,7 @@ interface ISearchBoxProps {
 
 const SearchBox: FC<ISearchBoxProps> = ({ data }) => {
   const [inputValue, setInputValue] = useState("");
-  const [values, setValues] = useState([]);
+  const [values, setValues] = useState<IListValues[]>([]);
 
   useEffect(() => {
     if (data.length > 0) {
@@ -22,7 +22,10 @@ const SearchBox: FC<ISearchBoxProps> = ({ data }) => {
 
       if (inputValue !== "") {
         filterdData = data.filter(item => {
-          return item.label.indexOf(inputValue) !== -1;
+          const lowerCaseLabel = item.label.toLowerCase();
+          const lowerCaseInputValue = inputValue.toLowerCase();
+
+          return lowerCaseLabel.indexOf(lowerCaseInputValue) !== -1;
         });
       }
 

@@ -38,7 +38,7 @@ const List: FC<IListProps> = ({ values }) => {
 };
 
 const ContainerStyled = styled.div`
-  height: calc(100vh - 50px);
+  height: calc(100vh - 34px);
 `;
 
 export default memo(List);

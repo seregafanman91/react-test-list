@@ -4,7 +4,9 @@ interface ITextProps {
   tag?: keyof JSX.IntrinsicElements;
 }
 
-const Text: FC<ITextProps> = ({ tag: Tag, children }) => {
+const Text: FC<ITextProps> = ({ tag, children }) => {
+  const Tag = tag as keyof JSX.IntrinsicElements;
+
   return <Tag>{children}</Tag>;
 };
 

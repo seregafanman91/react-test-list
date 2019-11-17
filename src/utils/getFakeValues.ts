@@ -4,7 +4,7 @@ import faker from "faker";
 const getFakeValues = () => {
   const data = [];
 
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < 100000; i++) {
     data.push({
       label: faker.name.findName(),
       value: uuid()
